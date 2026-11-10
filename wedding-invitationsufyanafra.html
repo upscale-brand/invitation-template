@@ -1,0 +1,688 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#3a0810" name="theme-color"/>
+<title>Sufiyan &amp; Afra — Wedding Invitation</title>
+<meta content="Join Sufiyan and Afra for their Nikah on Monday, 14 December 2026, in Mahad." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --maroon: #6b0f1a;
+      --deep: #3a0810;
+      --wine: #8c1c2b;
+      --gold: #d4af61;
+      --cream: #fff3e0;
+      --blush: #f4d8cf;
+      --rose: #c46b73;
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "Manrope", system-ui, sans-serif;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 18px; background: var(--deep); }
+    body { margin: 0; overflow-x: hidden; background: var(--deep); color: var(--cream); font-family: var(--sans); -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button, a { touch-action: manipulation; }
+    .serif { font-family: var(--serif); font-weight: 400; }
+    .script { color: var(--gold); font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .wrap { width: min(100%, 520px); margin-inline: auto; }
+    .section { position: relative; padding: 76px 24px; text-align: center; }
+    .eyebrow { color: var(--gold); font-size: .68rem; font-weight: 700; letter-spacing: .22em; line-height: 1.6; text-transform: uppercase; }
+    h2 { margin: 8px 0 12px; font: 400 2.3rem/1.1 var(--serif); }
+    .divider { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 18px auto 26px; color: var(--gold); }
+    .divider::before, .divider::after { width: 48px; height: 1px; background: var(--gold); content: ""; opacity: .7; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    /* Hero */
+    /* Curtains Interactive Reveal */
+    .curtain-stage { position: absolute; inset: 0; z-index: 5; overflow: hidden; pointer-events: auto; }
+    .curtain { position: absolute; top: 0; bottom: 0; width: 50.5%; background: linear-gradient(135deg, #420a12 0%, #6b0f1a 50%, #2b050c 100%); box-shadow: inset 0 0 50px rgba(0,0,0,0.7), 0 0 30px rgba(0,0,0,0.5); transition: transform 1.4s cubic-bezier(.7, 0, .25, 1); will-change: transform; }
+    .curtain::before { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0.22) 0px, transparent 16px, rgba(212,175,97,0.12) 32px, rgba(0,0,0,0.3) 48px); content: ""; pointer-events: none; }
+    .curtain-left { left: 0; border-right: 2px solid var(--gold); transform-origin: left center; }
+    .curtain-right { right: 0; border-left: 2px solid var(--gold); transform-origin: right center; }
+    .curtain-stage.is-open .curtain-left { transform: translateX(-101%) scaleY(1.02); }
+    .curtain-stage.is-open .curtain-right { transform: translateX(101%) scaleY(1.02); }
+    .curtain-stage.is-open { pointer-events: none; }
+
+    .curtain-seal { position: absolute; top: 50%; left: 50%; z-index: 6; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 120px; height: 120px; padding: 12px; border: 2px solid var(--gold); border-radius: 50%; background: radial-gradient(circle, #520b14 0%, #26040a 100%); color: var(--gold); cursor: pointer; transform: translate(-50%, -50%); box-shadow: 0 12px 36px rgba(0,0,0,0.7), 0 0 24px color-mix(in srgb, var(--gold) 45%, transparent); transition: opacity .6s ease, transform .6s ease; animation: sealPulse 2.8s ease-in-out infinite; }
+    .curtain-seal::after { position: absolute; inset: 5px; border: 1px dashed color-mix(in srgb, var(--gold) 55%, transparent); border-radius: 50%; content: ""; }
+    @keyframes sealPulse { 0%, 100% { box-shadow: 0 12px 36px rgba(0,0,0,0.7), 0 0 20px color-mix(in srgb, var(--gold) 35%, transparent); } 50% { box-shadow: 0 16px 44px rgba(0,0,0,0.8), 0 0 32px color-mix(in srgb, var(--gold) 65%, transparent); transform: translate(-50%, -50%) scale(1.03); } }
+    .curtain-stage.is-open .curtain-seal { opacity: 0; transform: translate(-50%, -50%) scale(.6); pointer-events: none; }
+    .seal-monogram { font: italic 400 1.25rem/1 var(--serif); color: var(--cream); margin-bottom: 3px; }
+    .seal-text { font-size: .62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+    .seal-sub { font-size: .52rem; letter-spacing: .12em; text-transform: uppercase; color: var(--blush); opacity: .85; }
+
+    /* Hero Content Staggered Reveal */
+    .hero-content { width: min(100%, 440px); padding-top: 26px; opacity: 0; transform: translateY(28px) scale(.96); filter: blur(4px); transition: opacity 1.2s cubic-bezier(.2,.8,.2,1) .3s, transform 1.2s cubic-bezier(.2,.8,.2,1) .3s, filter 1s ease .3s; }
+    .hero.is-revealed .hero-content { opacity: 1; transform: none; filter: none; }
+    .scroll-cue { position: absolute; bottom: calc(26px + var(--safe-bottom)); left: 50%; color: var(--gold); font-size: .6rem; font-weight: 700; letter-spacing: .2em; text-decoration: none; transform: translateX(-50%); animation: float 1.8s ease-in-out infinite; opacity: 0; pointer-events: none; transition: opacity .8s ease 1s; }
+    .hero.is-revealed .scroll-cue { opacity: 1; pointer-events: auto; }
+
+    .hero { position: relative; display: grid; min-height: 100svh; min-height: max(740px, 100svh); overflow: hidden; place-items: center; padding: 40px 24px 68px; isolation: isolate; text-align: center; background: var(--deep); }
+    .hero video, .hero-shade, .hero-frame { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero video { z-index: -3; object-fit: cover; object-position: center 48%; }
+    .hero-shade { z-index: -2; background: linear-gradient(180deg, color-mix(in srgb, var(--deep) 42%, transparent), color-mix(in srgb, var(--deep) 28%, transparent) 30%, color-mix(in srgb, var(--deep) 48%, transparent) 70%, var(--deep)); }
+    .hero-frame { inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent); border-radius: 180px 180px 12px 12px; pointer-events: none; }
+    .hero-frame::after { position: absolute; inset: 8px; border: 1px solid color-mix(in srgb, var(--gold) 28%, transparent); border-radius: 172px 172px 8px 8px; content: ""; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    .hero .eyebrow { text-shadow: 0 2px 16px var(--deep); }
+    h1.names { margin: 24px 0 16px; color: var(--gold); font: 400 clamp(3.6rem, 16vw, 5.25rem)/.88 var(--serif); text-shadow: 0 3px 24px var(--deep); }
+    .names span { display: block; margin: 10px 0; color: var(--cream); font: italic 400 2rem/1 var(--serif); }
+    .invitation-line { max-width: 300px; margin: 0 auto; font: italic 400 1.25rem/1.4 var(--serif); text-shadow: 0 2px 16px var(--deep); }
+    .hero-date { margin-top: 18px; color: var(--cream); font-size: .86rem; font-weight: 700; letter-spacing: .18em; }
+    .countdown { display: flex; justify-content: center; gap: 8px; margin: 26px 0 0; }
+    .countdown div { display: grid; width: 64px; min-height: 68px; align-content: center; gap: 3px; border: 1px solid color-mix(in srgb, var(--gold) 60%, transparent); background: color-mix(in srgb, var(--deep) 48%, transparent); backdrop-filter: blur(5px); }
+    .countdown b { color: var(--gold); font: 400 1.55rem/1 var(--serif); font-variant-numeric: tabular-nums; }
+    .countdown span { color: var(--cream); font-size: .55rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .hero-actions { display: flex; justify-content: center; gap: 10px; margin-top: 24px; }
+    .icon-button { display: inline-grid; width: 44px; height: 44px; flex: 0 0 44px; place-items: center; border: 1px solid color-mix(in srgb, var(--gold) 70%, transparent); border-radius: 50%; background: color-mix(in srgb, var(--deep) 40%, transparent); color: var(--cream); cursor: pointer; }
+    .icon-button svg { width: 19px; height: 19px; }
+    @keyframes float { 50% { translate: 0 5px; } }
+    .petal { position: absolute; top: -24px; z-index: -1; width: 10px; height: 14px; border-radius: 80% 0 80% 0; background: var(--rose); opacity: .7; animation: fall linear infinite; pointer-events: none; }
+    @keyframes fall { to { transform: translate3d(var(--drift), 110svh, 0) rotate(460deg); } }
+
+    /* Scratch Section */
+    .scratch-section { background: linear-gradient(180deg, var(--deep), var(--maroon)); }
+    .scratch-card { position: relative; display: flex; width: min(100%, 360px); min-height: 224px; flex-direction: column; align-items: center; justify-content: center; gap: 9px; overflow: hidden; margin: 0 auto; padding: 22px; border: 2px solid var(--gold); border-radius: 4px; background: var(--cream); box-shadow: 0 16px 40px color-mix(in srgb, var(--deep) 55%, transparent); color: var(--maroon); }
+    .scratch-card small { color: var(--wine); font-size: .62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .scratch-card .big { font: 400 2.35rem/1.05 var(--serif); }
+    .scratch-card canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; transition: opacity .7s ease; }
+    .scratch-card.is-done canvas { opacity: 0; pointer-events: none; }
+    .hint { margin: 16px 0 0; color: var(--blush); font-size: .8rem; }
+
+    /* Interactive Our Story */
+    .story { background: var(--cream); color: var(--deep); }
+    .story h2, .venue h2 { color: var(--maroon); }
+    .story-copy, .venue-copy { margin: 0; font-size: .94rem; line-height: 1.85; }
+    .story .eyebrow, .venue .eyebrow { color: var(--wine); }
+    .story .divider, .venue .divider { color: var(--wine); }
+
+    .story-carousel { position: relative; margin-top: 32px; text-align: center; }
+    .story-nav { display: flex; justify-content: center; gap: 6px; margin-bottom: 22px; }
+    .story-tab { padding: 8px 14px; border: 1px solid color-mix(in srgb, var(--maroon) 25%, transparent); border-radius: 2px; background: transparent; color: var(--wine); font-size: .74rem; font-weight: 700; letter-spacing: .1em; cursor: pointer; transition: all .25s ease; }
+    .story-tab.is-active { border-color: var(--maroon); background: var(--maroon); color: var(--cream); }
+    .story-tab:focus-visible { outline: 2px solid var(--maroon); outline-offset: 2px; }
+
+    .story-viewport { position: relative; min-height: 290px; }
+    .story-card { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 20px; border: 1px solid color-mix(in srgb, var(--maroon) 18%, transparent); border-radius: 4px; background: color-mix(in srgb, #fff 65%, var(--cream)); box-shadow: 0 10px 28px color-mix(in srgb, var(--deep) 10%, transparent); opacity: 0; transform: translateY(12px) scale(.98); pointer-events: none; transition: opacity .4s ease, transform .4s ease; }
+    .story-card.is-active { position: relative; opacity: 1; transform: none; pointer-events: auto; }
+    .story-badge { display: inline-block; margin-bottom: 12px; color: var(--wine); font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .story-icon { width: 44px; height: 44px; margin-bottom: 12px; color: var(--maroon); }
+    .story-icon svg { width: 100%; height: 100%; }
+    .story-card h3 { margin: 0 0 10px; color: var(--maroon); font: 400 1.65rem/1.2 var(--serif); }
+    .story-card p { max-width: 380px; margin: 0; color: color-mix(in srgb, var(--deep) 85%, transparent); font-size: .88rem; line-height: 1.75; }
+
+    .story-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 22px; }
+    .story-ctrl-btn { display: inline-grid; width: 38px; height: 38px; place-items: center; border: 1px solid color-mix(in srgb, var(--maroon) 35%, transparent); border-radius: 2px; background: transparent; color: var(--maroon); cursor: pointer; transition: background .2s, color .2s; }
+    .story-ctrl-btn:hover { background: var(--maroon); color: var(--cream); }
+    .story-ctrl-btn svg { width: 16px; height: 16px; }
+    .story-counter { color: var(--wine); font-size: .74rem; font-weight: 700; letter-spacing: .15em; }
+
+    /* Interactive Celebrations */
+    .events { background: linear-gradient(180deg, var(--maroon), var(--deep)); }
+    .event-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 0 auto 28px; }
+    .filter-btn { padding: 7px 12px; border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent); border-radius: 2px; background: transparent; color: var(--cream); font-size: .72rem; font-weight: 600; letter-spacing: .1em; cursor: pointer; transition: all .2s ease; }
+    .filter-btn.is-active { border-color: var(--gold); background: var(--gold); color: var(--deep); font-weight: 700; }
+    .filter-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    .event-list { display: grid; gap: 14px; text-align: left; }
+    .event-item { border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); border-radius: 3px; background: color-mix(in srgb, var(--cream) 6%, transparent); transition: border-color .25s ease, background .25s ease; }
+    .event-item.is-expanded { border-color: var(--gold); background: color-mix(in srgb, var(--cream) 10%, transparent); }
+    .event-header { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 14px; padding: 18px 16px; border: 0; background: transparent; color: inherit; cursor: pointer; text-align: left; }
+    .event-header:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+    .event-meta { display: grid; gap: 4px; }
+    .event-date-badge { color: var(--gold); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .event-item h3 { margin: 0; color: var(--cream); font: 400 1.45rem/1.15 var(--serif); }
+    .event-place { margin: 0; color: var(--blush); font-size: .82rem; }
+    .event-chevron { display: grid; width: 32px; height: 32px; flex: 0 0 32px; place-items: center; border: 1px solid color-mix(in srgb, var(--gold) 50%, transparent); border-radius: 2px; color: var(--gold); transition: transform .3s ease, background .2s ease; }
+    .event-chevron svg { width: 14px; height: 14px; }
+    .event-item.is-expanded .event-chevron { transform: rotate(180deg); background: var(--gold); color: var(--deep); }
+
+    .event-details { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows .35s ease; }
+    .event-item.is-expanded .event-details { grid-template-rows: 1fr; }
+    .event-drawer { min-height: 0; padding: 0 16px 18px; border-top: 1px solid color-mix(in srgb, var(--gold) 20%, transparent); }
+    .event-drawer-inner { padding-top: 14px; }
+    .event-desc { margin: 0 0 12px; color: var(--blush); font-size: .84rem; line-height: 1.7; }
+    .event-attire { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; color: var(--gold); font-size: .78rem; font-weight: 600; letter-spacing: .06em; }
+    .event-attire svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .cal-button { display: inline-flex; min-height: 38px; align-items: center; gap: 7px; padding: 0 14px; border: 1px solid var(--gold); border-radius: 2px; background: transparent; color: var(--gold); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; transition: background .2s, color .2s; }
+    .cal-button:hover, .cal-button:focus-visible { background: var(--gold); color: var(--deep); }
+    .cal-button svg { width: 13px; height: 13px; }
+
+    /* Venue & Map */
+    .venue { background: var(--blush); color: var(--deep); }
+    .venue-map-wrap { position: relative; width: 100%; max-width: 440px; aspect-ratio: 16/10; margin: 24px auto 14px; border: 1px solid color-mix(in srgb, var(--maroon) 40%, transparent); border-radius: 3px; overflow: hidden; box-shadow: 0 10px 24px color-mix(in srgb, var(--deep) 16%, transparent); background: var(--cream); }
+    .venue-map { width: 100%; height: 100%; border: 0; display: block; }
+    .button-link { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 8px; margin-top: 20px; padding: 0 24px; border: 0; border-radius: 2px; background: var(--maroon); color: var(--cream); font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; transition: transform .2s ease, background .2s ease; }
+    .button-link:active { transform: scale(.98); }
+
+    /* Footer & Bottom Bar */
+    footer { padding: 42px 24px calc(38px + var(--safe-bottom)); background: var(--deep); color: var(--blush); font-size: .76rem; text-align: center; }
+    footer .script { display: block; margin-bottom: 6px; font-size: 1.8rem; }
+    footer p { margin: 0; }
+    .bottom-bar { position: fixed; z-index: 10; right: 0; bottom: 0; left: 0; display: flex; justify-content: center; padding: 10px 16px calc(10px + var(--safe-bottom)); background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--deep) 96%, transparent) 22%); pointer-events: none; }
+    .bottom-bar a { width: min(100%, 440px); min-height: 48px; margin: 0; box-shadow: 0 4px 18px color-mix(in srgb, var(--deep) 45%, transparent); pointer-events: auto; }
+    #confetti { position: fixed; z-index: 20; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+    @media (min-width: 700px) {
+      .section { padding-block: 92px; }
+      .hero { min-height: 900px; }
+      .countdown { gap: 12px; }
+      .countdown div { width: 70px; }
+      .story-viewport { min-height: 260px; }
+    }
+    @media (max-width: 360px) {
+      .section { padding-inline: 18px; }
+      .hero { padding-inline: 18px; }
+      h1.names { font-size: 3.45rem; }
+      .countdown { gap: 6px; }
+      .countdown div { width: 59px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+      .petal { display: none; }
+      .curtain-stage { display: none; }
+      .hero-content { opacity: 1 !important; transform: none !important; filter: none !important; }
+      .scroll-cue { opacity: 1 !important; pointer-events: auto !important; }
+      .story-card { transition: none !important; }
+      .event-details { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+<header class="hero" id="top">
+<video aria-hidden="true" autoplay="" id="heroVideo" loop="" muted="" playsinline="" preload="metadata">
+<source src="wedding-hero.mp4" type="video/mp4"/>
+</video>
+<div aria-hidden="true" class="hero-shade"></div>
+<div aria-hidden="true" class="hero-frame"></div>
+<!-- Interactive Royal Curtains Overlay -->
+<div class="curtain-stage" id="curtainStage">
+<div aria-hidden="true" class="curtain curtain-left"></div>
+<div aria-hidden="true" class="curtain curtain-right"></div>
+<button aria-label="Tap to unveil the invitation" class="curtain-seal" id="curtainToggle" type="button">
+<span class="seal-monogram">S &amp; A</span>
+<span class="seal-text">Tap to Unveil</span>
+<span class="seal-sub">Invitation</span>
+</button>
+</div>
+<div class="hero-content">
+<div class="eyebrow">Together with their families</div>
+<h1 class="names">Sufiyan <span>&amp;</span> Afra</h1>
+<p class="invitation-line">Request the pleasure of your presence on the wedding ceremony of their beloved son</p>
+<div class="hero-date">MONDAY · 14 DECEMBER 2026</div>
+<div aria-label="Countdown to the wedding" class="countdown" id="countdown"></div>
+<div class="hero-actions">
+<!-- Initial state: video is muted, so button shows muted speaker and label offers to turn sound on -->
+<button aria-label="Turn video sound on" class="icon-button" id="soundToggle" title="Turn video sound on" type="button">
+<svg aria-hidden="true" fill="none" id="soundIcon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"></path><line x1="22" x2="16" y1="9" y2="15"></line><line x1="16" x2="22" y1="9" y2="15"></line></svg>
+</button>
+<a aria-label="Explore the celebration details" class="icon-button" href="#celebrations" title="Explore the celebration details">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 5v14m-7-7 7 7 7-7"></path></svg>
+</a>
+</div>
+</div>
+<a class="scroll-cue" href="#surprise">SCROLL TO EXPLORE ↓</a>
+</header>
+<main>
+<section class="section scratch-section" id="surprise">
+<div class="wrap reveal">
+<div class="eyebrow">A little surprise</div>
+<h2>Scratch to reveal</h2>
+<div aria-hidden="true" class="divider">✦</div>
+<div class="scratch-card" id="scratchCard">
+<small>Save the date</small>
+<div class="big">Monday, 14 December 2026</div>
+<small>5th Rajab 1448 AH</small>
+<canvas aria-label="Scratch the golden card to reveal the date" id="scratchCanvas" role="button" tabindex="0"></canvas>
+</div>
+<p aria-live="polite" class="hint" id="scratchHint">Swipe with your finger to reveal the date</p>
+</div>
+</section>
+<!-- Optimized & Redesigned Interactive Our Story -->
+<section class="section story" id="our-story">
+<div class="wrap reveal">
+<div class="eyebrow">With their families</div>
+<h2>With blessings &amp; joy</h2>
+<div aria-hidden="true" class="divider">✦</div>
+<p class="story-copy">With the blessings of their families, we joyfully invite you to the Nikah of Sufiyan and Afra.</p>
+<div class="story-carousel" id="storyCarousel">
+<div aria-label="Story Chapters" class="story-nav" role="tablist">
+<button aria-controls="storyChapter1" aria-selected="true" class="story-tab is-active" id="tab1" role="tab" type="button">Hosts</button>
+<button aria-controls="storyChapter2" aria-selected="false" class="story-tab" id="tab2" role="tab" type="button">Couple</button>
+<button aria-controls="storyChapter3" aria-selected="false" class="story-tab" id="tab3" role="tab" type="button">Bride’s family</button>
+<button aria-controls="storyChapter4" aria-selected="false" class="story-tab" id="tab4" role="tab" type="button">Nikah</button>
+</div>
+<div class="story-viewport">
+<!-- Chapter 1 -->
+<article aria-labelledby="tab1" class="story-card is-active" id="storyChapter1" role="tabpanel">
+<span class="story-badge">The Hosts</span>
+<div aria-hidden="true" class="story-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><line x1="6" x2="6" y1="2" y2="4"></line><line x1="10" x2="10" y1="2" y2="4"></line><line x1="14" x2="14" y1="2" y2="4"></line></svg>
+</div>
+<h3>With blessings from</h3>
+<p>Late Mr. Salahuddin Kupe &amp; Mrs. Husnabanu Kupe</p>
+</article>
+<!-- Chapter 2 -->
+<article aria-labelledby="tab2" class="story-card" id="storyChapter2" role="tabpanel">
+<span class="story-badge">The Couple</span>
+<div aria-hidden="true" class="story-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+</div>
+<h3>Sufiyan &amp; Afra</h3>
+<p>Groom Sufiyan and bride Afra.</p>
+</article>
+<!-- Chapter 3 -->
+<article aria-labelledby="tab3" class="story-card" id="storyChapter3" role="tabpanel">
+<span class="story-badge">The Bride’s Family</span>
+<div aria-hidden="true" class="story-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 2v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="M20 12h2"></path><path d="m19.07 4.93-1.41 1.41"></path><polygon points="12 6 15 9 12 12 9 9 12 6"></polygon></svg>
+</div>
+<h3>With blessings from</h3>
+<p>D/o Mr. Rasheed Pardesi &amp; Mrs. Naseema Pardesi</p>
+</article>
+<!-- Chapter 4 -->
+<article aria-labelledby="tab4" class="story-card" id="storyChapter4" role="tabpanel">
+<span class="story-badge">Nikah (Insha Allah)</span>
+<div aria-hidden="true" class="story-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+</div>
+<h3>The Nikah</h3>
+<p>Monday, 14 December 2026 · 11:30 AM · Quddusiya Masjid, Deshmukh Mohalla, Mahad</p>
+</article>
+</div>
+<div class="story-controls">
+<button aria-label="Previous chapter" class="story-ctrl-btn" id="storyPrev" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<span aria-live="polite" class="story-counter" id="storyCounter">1 of 4</span>
+<button aria-label="Next chapter" class="story-ctrl-btn" id="storyNext" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Optimized & Redesigned Interactive Celebrations -->
+<section class="section events" id="celebrations">
+<div class="wrap">
+<div class="reveal">
+<div class="eyebrow">The gathering</div>
+<h2>Nikah ceremony</h2>
+<div aria-hidden="true" class="divider">✦</div>
+</div>
+<div aria-label="Filter events by day" class="event-filters" role="group">
+<button class="filter-btn is-active" data-day="all" type="button">All Days</button>
+
+
+<button class="filter-btn" data-day="14" type="button">14 Dec</button>
+</div>
+<div class="event-list" id="eventList">
+<!-- Event 1 -->
+
+<!-- Event 2 -->
+
+<!-- Event 3 -->
+<article class="event-item" data-event-day="14">
+<button aria-controls="eventDetail3" aria-expanded="false" class="event-header" type="button">
+<div class="event-meta">
+<span class="event-date-badge">Monday, 14 December 2026 · 11:30 AM</span>
+<h3>Nikah (Insha Allah)</h3>
+<p class="event-place">Quddusiya Masjid, Deshmukh Mohalla, Mahad</p>
+</div>
+<div aria-hidden="true" class="event-chevron">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</div>
+</button>
+<div class="event-details" id="eventDetail3">
+<div class="event-drawer">
+<div class="event-drawer-inner">
+<p class="event-desc">The wedding ceremony of Sufiyan and Afra.</p>
+<div class="event-attire">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+<span>Thereafter: Lunch</span>
+</div>
+<a class="cal-button" href="https://www.google.com/maps/search/?api=1&amp;query=Quddusiya+Masjid+Deshmukh+Mohalla+Mahad" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+<span>Open Venue in Maps</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Event 4 -->
+
+</div>
+</div>
+</section>
+<!-- Venue with Map above Get Directions -->
+<section class="section venue" id="venue">
+<div class="wrap reveal">
+<div class="eyebrow">Where</div>
+<h2>Quddusiya Masjid</h2>
+<div aria-hidden="true" class="divider">✦</div>
+<p class="venue-copy">Deshmukh Mohalla,<br/>Mahad</p>
+<!-- Small responsive Google Map embedded above Get Directions -->
+<div class="venue-map-wrap">
+<iframe aria-label="Location map of Quddusiya Masjid in Mahad" class="venue-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Quddusiya+Masjid+Deshmukh+Mohalla+Mahad&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="Quddusiya Masjid, Mahad Location Map">
+</iframe>
+</div>
+<a class="button-link" href="https://www.google.com/maps/search/?api=1&amp;query=Quddusiya+Masjid+Deshmukh+Mohalla+Mahad" rel="noopener noreferrer" target="_blank">Get directions <span aria-hidden="true">↗</span></a>
+</div>
+</section>
+</main>
+<footer>
+<span class="script">S &amp; A</span>
+<p>With love &amp; gratitude · #SufiyanWedsAfra</p>
+</footer>
+<div class="bottom-bar">
+<a class="button-link" href="#venue">View Venue &amp; Map <span aria-hidden="true">✦</span></a>
+</div>
+<canvas aria-hidden="true" id="confetti"></canvas>
+<script>
+    (() => {
+      // Petals in Hero
+      const hero = document.querySelector('.hero');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reducedMotion && hero) {
+        for (let i = 0; i < 12; i += 1) {
+          const petal = document.createElement('i');
+          petal.className = 'petal';
+          petal.setAttribute('aria-hidden', 'true');
+          petal.style.left = `${Math.random() * 100}%`;
+          petal.style.setProperty('--drift', `${(Math.random() - .5) * 120}px`);
+          petal.style.animationDuration = `${7 + Math.random() * 7}s`;
+          petal.style.animationDelay = `${-Math.random() * 12}s`;
+          hero.append(petal);
+        }
+      }
+
+      // Curtain Interactive Reveal
+      const heroEl = document.querySelector('.hero');
+      const curtainStage = document.getElementById('curtainStage');
+      const curtainToggle = document.getElementById('curtainToggle');
+
+      const openCurtains = () => {
+        if (!curtainStage || curtainStage.classList.contains('is-open')) return;
+        curtainStage.classList.add('is-open');
+        if (heroEl) heroEl.classList.add('is-revealed');
+        const vid = document.getElementById('heroVideo');
+        if (vid && vid.paused) {
+          vid.play().catch(() => {});
+        }
+      };
+
+      if (curtainToggle) {
+        curtainToggle.addEventListener('click', openCurtains);
+        curtainToggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openCurtains();
+          }
+        });
+      }
+
+      // Sound Toggle - Fixed Correct State Mapping
+      const soundButton = document.getElementById('soundToggle');
+      const video = document.getElementById('heroVideo');
+      if (soundButton && video) {
+        // SVG when Muted (Speaker with X indicator)
+        const mutedSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>';
+        // SVG when Unmuted / Playing Sound (Speaker with Sound Waves)
+        const soundOnSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a5 5 0 0 1 0 6M18 6a9 9 0 0 1 0 12"/></svg>';
+
+        soundButton.addEventListener('click', () => {
+          video.muted = !video.muted;
+          if (video.muted) {
+            // Video is now MUTED
+            soundButton.setAttribute('aria-label', 'Turn video sound on');
+            soundButton.title = 'Turn video sound on';
+            soundButton.innerHTML = mutedSvg;
+          } else {
+            // Video is now PLAYING SOUND
+            soundButton.setAttribute('aria-label', 'Turn video sound off');
+            soundButton.title = 'Turn video sound off';
+            soundButton.innerHTML = soundOnSvg;
+            video.play().catch(() => {});
+          }
+        });
+      }
+
+      // Countdown
+      const countdown = document.getElementById('countdown');
+      const target = new Date('2026-12-14T11:30:00+05:30');
+      const units = [['Days', 86400000], ['Hrs', 3600000], ['Min', 60000], ['Sec', 1000]];
+      const updateCountdown = () => {
+        let remaining = Math.max(0, target.getTime() - Date.now());
+        countdown.innerHTML = units.map(([label, size]) => {
+          const value = Math.floor(remaining / size);
+          remaining -= value * size;
+          return `<div><b>${String(value).padStart(2, '0')}</b><span>${label}</span></div>`;
+        }).join('');
+      };
+      updateCountdown();
+      window.setInterval(updateCountdown, 1000);
+
+      // Scroll Reveal Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+      // Scratch Card Logic
+      const card = document.getElementById('scratchCard');
+      const scratchCanvas = document.getElementById('scratchCanvas');
+      if (card && scratchCanvas) {
+        const scratchContext = scratchCanvas.getContext('2d');
+        const hint = document.getElementById('scratchHint');
+        let drawing = false;
+        let done = false;
+        let moves = 0;
+        const paintScratchLayer = () => {
+          if (done) return;
+          const bounds = card.getBoundingClientRect();
+          if (!bounds.width || !bounds.height) return;
+          const ratio = window.devicePixelRatio || 1;
+          scratchCanvas.width = Math.round(bounds.width * ratio);
+          scratchCanvas.height = Math.round(bounds.height * ratio);
+          scratchCanvas.style.width = `${bounds.width}px`;
+          scratchCanvas.style.height = `${bounds.height}px`;
+          scratchContext.setTransform(ratio, 0, 0, ratio, 0, 0);
+          const fill = scratchContext.createLinearGradient(0, 0, bounds.width, bounds.height);
+          fill.addColorStop(0, '#b8862f');
+          fill.addColorStop(.5, '#f3dc9c');
+          fill.addColorStop(1, '#a8741f');
+          scratchContext.globalCompositeOperation = 'source-over';
+          scratchContext.fillStyle = fill;
+          scratchContext.fillRect(0, 0, bounds.width, bounds.height);
+          scratchContext.fillStyle = 'rgba(107,15,26,.12)';
+          for (let i = 0; i < 100; i += 1) {
+            scratchContext.beginPath();
+            scratchContext.arc(Math.random() * bounds.width, Math.random() * bounds.height, Math.random() * 2.5 + 1, 0, Math.PI * 2);
+            scratchContext.fill();
+          }
+          scratchContext.fillStyle = '#6b0f1a';
+          scratchContext.textAlign = 'center';
+          scratchContext.font = 'italic 28px "DM Serif Display", Georgia, serif';
+          scratchContext.fillText('Scratch here', bounds.width / 2, bounds.height / 2 + 3);
+          scratchContext.font = '700 10px Manrope, sans-serif';
+          scratchContext.fillText('✦  SOMETHING SPECIAL AWAITS  ✦', bounds.width / 2, bounds.height / 2 + 30);
+        };
+        const revealDate = () => {
+          if (done) return;
+          done = true;
+          card.classList.add('is-done');
+          hint.textContent = 'We can’t wait to celebrate with you!';
+          celebrate();
+        };
+        const position = (event) => {
+          const bounds = scratchCanvas.getBoundingClientRect();
+          return [event.clientX - bounds.left, event.clientY - bounds.top];
+        };
+        const scratch = (event) => {
+          if (!drawing || done) return;
+          const [x, y] = position(event);
+          scratchContext.globalCompositeOperation = 'destination-out';
+          scratchContext.beginPath();
+          scratchContext.arc(x, y, 23, 0, Math.PI * 2);
+          scratchContext.fill();
+          moves += 1;
+          if (moves % 7 === 0) {
+            const pixels = scratchContext.getImageData(0, 0, scratchCanvas.width, scratchCanvas.height).data;
+            let cleared = 0;
+            let sampled = 0;
+            for (let i = 3; i < pixels.length; i += 96) {
+              sampled += 1;
+              if (pixels[i] < 20) cleared += 1;
+            }
+            if (sampled && cleared / sampled > .42) revealDate();
+          }
+        };
+        paintScratchLayer();
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(paintScratchLayer);
+        window.addEventListener('resize', paintScratchLayer);
+        scratchCanvas.addEventListener('pointerdown', (event) => {
+          if (done) return;
+          drawing = true;
+          scratchCanvas.setPointerCapture(event.pointerId);
+          scratch(event);
+        });
+        scratchCanvas.addEventListener('pointermove', scratch);
+        ['pointerup', 'pointercancel', 'lostpointercapture'].forEach((eventName) => scratchCanvas.addEventListener(eventName, () => { drawing = false; }));
+        scratchCanvas.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            revealDate();
+          }
+        });
+      }
+
+      // Confetti Animation
+      function celebrate() {
+        const canvas = document.getElementById('confetti');
+        if (!canvas) return;
+        const context = canvas.getContext('2d');
+        const ratio = window.devicePixelRatio || 1;
+        canvas.width = Math.round(window.innerWidth * ratio);
+        canvas.height = Math.round(window.innerHeight * ratio);
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+        const colors = ['#d4af61', '#8c1c2b', '#f4d8cf', '#c46b73', '#fff3e0'];
+        const pieces = Array.from({ length: 90 }, () => ({
+          x: window.innerWidth / 2, y: window.innerHeight * .52,
+          vx: (Math.random() - .5) * 11, vy: -Math.random() * 12 - 3,
+          size: Math.random() * 6 + 3, angle: Math.random() * 6,
+          color: colors[Math.floor(Math.random() * colors.length)]
+        }));
+        let frame = 0;
+        const animate = () => {
+          context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+          pieces.forEach((piece) => {
+            piece.vy += .28;
+            piece.x += piece.vx;
+            piece.y += piece.vy;
+            piece.angle += .12;
+            context.save();
+            context.translate(piece.x, piece.y);
+            context.rotate(piece.angle);
+            context.fillStyle = piece.color;
+            context.fillRect(-piece.size / 2, -piece.size / 4, piece.size, piece.size / 2);
+            context.restore();
+          });
+          frame += 1;
+          if (frame < 130) window.requestAnimationFrame(animate);
+          else context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        };
+        if (!reducedMotion) window.requestAnimationFrame(animate);
+      }
+
+      // Interactive Our Story Carousel Logic
+      const storyTabs = Array.from(document.querySelectorAll('.story-tab'));
+      const storyCards = Array.from(document.querySelectorAll('.story-card'));
+      const storyPrev = document.getElementById('storyPrev');
+      const storyNext = document.getElementById('storyNext');
+      const storyCounter = document.getElementById('storyCounter');
+      let currentStoryIndex = 0;
+
+      const setStoryChapter = (index) => {
+        currentStoryIndex = (index + storyCards.length) % storyCards.length;
+        storyTabs.forEach((tab, i) => {
+          const isActive = i === currentStoryIndex;
+          tab.classList.toggle('is-active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        storyCards.forEach((card, i) => {
+          card.classList.toggle('is-active', i === currentStoryIndex);
+        });
+        if (storyCounter) {
+          storyCounter.textContent = `${currentStoryIndex + 1} of ${storyCards.length}`;
+        }
+      };
+
+      storyTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => setStoryChapter(index));
+      });
+      if (storyPrev) {
+        storyPrev.addEventListener('click', () => setStoryChapter(currentStoryIndex - 1));
+      }
+      if (storyNext) {
+        storyNext.addEventListener('click', () => setStoryChapter(currentStoryIndex + 1));
+      }
+
+      // Interactive Celebrations Itinerary Accordion & Filtering
+      const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
+      const eventItems = Array.from(document.querySelectorAll('.event-item'));
+
+      // Accordion toggle
+      eventItems.forEach((item) => {
+        const header = item.querySelector('.event-header');
+        if (!header) return;
+        header.addEventListener('click', () => {
+          const isCurrentlyExpanded = item.classList.contains('is-expanded');
+          eventItems.forEach((other) => {
+            other.classList.remove('is-expanded');
+            const otherBtn = other.querySelector('.event-header');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          });
+          if (!isCurrentlyExpanded) {
+            item.classList.add('is-expanded');
+            header.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // Filter events by day
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const day = btn.getAttribute('data-day');
+          filterButtons.forEach((b) => b.classList.toggle('is-active', b === btn));
+          eventItems.forEach((item) => {
+            const itemDay = item.getAttribute('data-event-day');
+            const show = day === 'all' || itemDay === day;
+            item.style.display = show ? 'block' : 'none';
+          });
+          const visibleItems = eventItems.filter((i) => i.style.display !== 'none');
+          if (visibleItems.length > 0 && !visibleItems.some((i) => i.classList.contains('is-expanded'))) {
+            visibleItems[0].classList.add('is-expanded');
+            const h = visibleItems[0].querySelector('.event-header');
+            if (h) h.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
